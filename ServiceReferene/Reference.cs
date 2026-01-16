@@ -16,25 +16,25 @@ namespace ServiceReference
     public interface TestNavWs_Port
     {
         
-        [System.ServiceModel.OperationContractAttribute(Action="urn:microsoft-dynamics-schemas/codeunit/TestNavWs:TestHelloWorld", ReplyAction="*")]
-        System.Threading.Tasks.Task<ServiceReference.TestHelloWorld_Result> TestHelloWorldAsync(ServiceReference.TestHelloWorld request);
+        [System.ServiceModel.OperationContractAttribute(Action="urn:microsoft-dynamics-schemas/codeunit/TestNavWs:HelloWorld", ReplyAction="*")]
+        System.Threading.Tasks.Task<ServiceReference.HelloWorld_Result> HelloWorldAsync(ServiceReference.HelloWorld request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="TestHelloWorld", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/TestNavWs", IsWrapped=true)]
-    public partial class TestHelloWorld
+    [System.ServiceModel.MessageContractAttribute(WrapperName="HelloWorld", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/TestNavWs", IsWrapped=true)]
+    public partial class HelloWorld
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="urn:microsoft-dynamics-schemas/codeunit/TestNavWs", Order=0)]
         public string inputText;
         
-        public TestHelloWorld()
+        public HelloWorld()
         {
         }
         
-        public TestHelloWorld(string inputText)
+        public HelloWorld(string inputText)
         {
             this.inputText = inputText;
         }
@@ -43,18 +43,18 @@ namespace ServiceReference
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="TestHelloWorld_Result", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/TestNavWs", IsWrapped=true)]
-    public partial class TestHelloWorld_Result
+    [System.ServiceModel.MessageContractAttribute(WrapperName="HelloWorld_Result", WrapperNamespace="urn:microsoft-dynamics-schemas/codeunit/TestNavWs", IsWrapped=true)]
+    public partial class HelloWorld_Result
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="urn:microsoft-dynamics-schemas/codeunit/TestNavWs", Order=0)]
         public string return_value;
         
-        public TestHelloWorld_Result()
+        public HelloWorld_Result()
         {
         }
         
-        public TestHelloWorld_Result(string return_value)
+        public HelloWorld_Result(string return_value)
         {
             this.return_value = return_value;
         }
@@ -111,16 +111,16 @@ namespace ServiceReference
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<ServiceReference.TestHelloWorld_Result> ServiceReference.TestNavWs_Port.TestHelloWorldAsync(ServiceReference.TestHelloWorld request)
+        System.Threading.Tasks.Task<ServiceReference.HelloWorld_Result> ServiceReference.TestNavWs_Port.HelloWorldAsync(ServiceReference.HelloWorld request)
         {
-            return base.Channel.TestHelloWorldAsync(request);
+            return base.Channel.HelloWorldAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ServiceReference.TestHelloWorld_Result> TestHelloWorldAsync(string inputText)
+        public System.Threading.Tasks.Task<ServiceReference.HelloWorld_Result> HelloWorldAsync(string inputText)
         {
-            ServiceReference.TestHelloWorld inValue = new ServiceReference.TestHelloWorld();
+            ServiceReference.HelloWorld inValue = new ServiceReference.HelloWorld();
             inValue.inputText = inputText;
-            return ((ServiceReference.TestNavWs_Port)(this)).TestHelloWorldAsync(inValue);
+            return ((ServiceReference.TestNavWs_Port)(this)).HelloWorldAsync(inValue);
         }
         
         public virtual System.Threading.Tasks.Task OpenAsync()
@@ -153,8 +153,8 @@ namespace ServiceReference
         {
             if ((endpointConfiguration == EndpointConfiguration.TestNavWs_Port))
             {
-                return new System.ServiceModel.EndpointAddress("http://localhost:7649/DynamicsNAVCarloTEST/WS/MOTORFORUM FREDRIKSTAD/Codeunit/Tes" +
-                        "tNavWs?wsdl");
+                return new System.ServiceModel.EndpointAddress("http://localhost:7649/DynamicsNAVCarloTEST/WS/MOTORFORUM DRAMMEN/Codeunit/TestNav" +
+                        "Ws?wsdl");
             }
             throw new System.InvalidOperationException(string.Format("Could not find endpoint with name \'{0}\'.", endpointConfiguration));
         }
